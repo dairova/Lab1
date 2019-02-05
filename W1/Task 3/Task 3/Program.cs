@@ -1,23 +1,30 @@
 ﻿using System;
 
-namespace Ex3
+namespace Task_3
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			string n; //переменная
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //declare variable
+            string n; 
+            //read the line from the console
+            n = Console.ReadLine(); 
+            //convert string to integer
+            int b = int.Parse(n); 
 
-			n = Console.ReadLine(); //считываем строку
-			int b = int.Parse(n); //преврашаем строку в целые числа
+            /*create an array based on the string,
+              and divide the string into parts using the "Split"
+             */
+            string[] arr = Console.ReadLine().Split();
 
-			string[] arr = Console.ReadLine().Split(); //разделяем строку по пробелам(массив)
-
-			for (int i = 0; i < b; i++) //считываем массив
-			{
-				Console.Write(arr[i] + " " + arr[i] + " "); //выводим элементы массива повторяя 
+            //create a loop to output array elements (repeating each element)
+            for (int i = 0; i < b; i++) 
+            {
+                Console.Write(arr[i] + " " + arr[i] + " ");
                 Console.ReadKey(true);
-			}
-		}
-	}
+            }
+        }
+    }
 }
+ 
