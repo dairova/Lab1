@@ -39,7 +39,7 @@ namespace Task1
             */
             string[] a = Console.ReadLine().Split();
 
-            //create an array that consists of the quantaty of b
+            //create an array that consists of the quantity of b
             int[] array = new int[b];
 
             //create loop to convert the previous array to integer
@@ -68,9 +68,7 @@ namespace Task1
             //output the amount of prime numbers in console
             Console.WriteLine(cnt);
 
-            /*
-             создаем цикл, в основе которого лежит функция, при выполнении 
-             которой в кансоль будет выведено число, отвечающее заданным условиям     
+            /*   
              create a loop based on a function that displays the number that follows conditions
              */
             for (int j = 0; j < b; j++)
