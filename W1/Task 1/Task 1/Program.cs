@@ -52,7 +52,7 @@ namespace Task1
             int cnt = 0;
 
             /*
-             create a loop based on a function that increase the variable cnt if condition is true
+             create a cycle based on a function that increase the variable cnt if condition is true
              */
             for (int j = 0; j < b; j++)
             {
@@ -60,7 +60,7 @@ namespace Task1
                 if (IsPrime(array[j]) == true)
                 {
 
-                    //count quantaty of prime numbers
+                    //count quantity of prime numbers
                     cnt++;
                 }
             }
@@ -69,7 +69,7 @@ namespace Task1
             Console.WriteLine(cnt);
 
             /*   
-             create a loop based on a function that displays the number that follows conditions
+             create a cycle based on a function that displays the number that follows conditions
              */
             for (int j = 0; j < b; j++)
             {
