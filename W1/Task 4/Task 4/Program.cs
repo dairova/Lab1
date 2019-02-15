@@ -9,9 +9,7 @@ namespace Task_4
             string n; //declare variable for 2d array 
 
             n = Console.ReadLine(); //read the string from the console
-            int b = int.Parse(n); //convert string to integers
-
-            int[,] arr = new int[b, b]; //declare a two-dimensional array (bxb)
+            int b = int.Parse(n); //convert string to integer
 
             for (int i = 1; i <= b; i++) //create loop (for row of array)
             {
