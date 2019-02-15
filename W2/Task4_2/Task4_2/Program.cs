@@ -18,11 +18,9 @@ namespace Task4
 
             //copy created file to path2
             fs.CopyTo(path2);
-            Console.WriteLine("{0} was copied to {1}.", path1, path2);
 
             //delete created file in path1
             fs.Delete();
-            Console.WriteLine("{0} was successfully deleted.", path1);
         }
     }
 }
