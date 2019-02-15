@@ -149,26 +149,60 @@ namespace Task1
                         File.Delete(currentFs.FullName); //otherwise: delete the file
                     }
                 }
-                if (consoleKey.Key == ConsoleKey.Tab) // tab - rname elements
+                //R - rename element
+                if (consoleKey.Key == ConsoleKey.R)
+
                 {
+                    int k = 0;
+                    //пробегаемся по всем файлам в директории
+                    for (int i = 0; i < directory.GetFileSystemInfos().Length; i++)
+                    {
+                        //if the file is hidden, then continue
+                        if (ok && directory.GetFileSystemInfos()[i].Name.StartsWith("."))
+                            continue;
+                        //if no then  
+                        if (cursor == k)
+                        {
+                            //if the contion is true, then safe directory
+                            currentFs = directory.GetFileSystemInfos()[i];
+                            break;
+                        }
+                        //if the file is not hidden , increment k
+                        k++;
+                    }
+                    //read neww name
                     Console.Clear();
-                    string name = Console.ReadLine(); // write the new name for the element
-                    Console.Clear();
-                    string copPath = Path.Combine(currentFs.FullName, name); // create the new path using new name
+                    string nname = Console.ReadLine();
+
                     if (currentFs.GetType() == typeof(DirectoryInfo))
                     {
-                        Directory.Move(currentFs.FullName, copPath);
+
+                        // rename old name to new one
+                        int n = currentFs.Name.Length;
+                        string newpath = "";
+                        for (int i = 0; i < currentFs.FullName.Length - n; i++)
+                        {
+                            newpath += currentFs.FullName[i];
+                        }
+                        newpath = newpath + nname;
+                        Directory.Move(currentFs.FullName, newpath);
+
                     }
+                    //otherwise : for file
                     else
                     {
-                        File.Move(currentFs.FullName, copPath);
+                        int n = currentFs.Name.Length;
+                        string newpath = "";
+                        for (int i = 0; i < currentFs.FullName.Length - n; i++)
+                        {
+                            newpath += currentFs.FullName[i];
+                        }
+                        newpath = newpath + nname;
+                        //rename the file
+                        File.Move(currentFs.FullName, newpath);
+
                     }
 
-                    if (consoleKey.Key == ConsoleKey.Backspace) // backspase - go back
-                    {
-                        cursor = 0;
-                        path = directory.Parent.FullName;
-                    }
                 }
             }
 
